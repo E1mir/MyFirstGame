@@ -1,4 +1,4 @@
-package gameLogic;
+package Rally;
 import javazoom.jl.decoder.JavaLayerException;
 import  javazoom.jl.player.Player;
 

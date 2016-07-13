@@ -1,8 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="MyIdeas:jar">
+  <artifact type="jar" name="MyIdeas:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/MyIdeas_jar</output-path>
     <root id="archive" name="MyIdeas.jar">
       <element id="module-output" name="MyIdeas" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/JLayer1.0.1/jl1.0.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

@@ -1,4 +1,4 @@
-package gameLogic;
+package Rally;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,7 +79,6 @@ public class Player {
             dy = -10;
         }
     }
-
     public void keyReleased(KeyEvent e) {
         // JOptionPane.showMessageDialog(null, "key released");
         int key = e.getKeyCode();

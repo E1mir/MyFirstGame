@@ -1,4 +1,4 @@
-package gameLogic;
+package Rally;
 
 import javax.swing.*;
 import java.awt.*;
@@ -70,7 +70,7 @@ public class Road extends JPanel implements ActionListener, Runnable {
         Font font = new Font("Arial", Font.BOLD + Font.ITALIC, 20);
         g.setFont(font);
         g.drawString("Скорость: " + v + " км/ч", 100, 30);
-        g.drawString("Рекорд: "+p.s/200 +"км",700,30);
+        g.drawString("Рекорд: " + p.s / 200 + "км", 700, 30);
         //итерационный цикл для добавления соперников
         Iterator<Enemy> i = enemies.iterator();
         while (i.hasNext()) {
@@ -90,20 +90,16 @@ public class Road extends JPanel implements ActionListener, Runnable {
         crashtest();
         testWin();
     }
-
-
     private void crashtest() {
         Iterator<Enemy> i = enemies.iterator();
         while (i.hasNext()) {
             Enemy e = i.next();
             if (p.getRect().intersects(e.getRect())) {
-                // i.remove(); //собирать врагов :D :D
                 JOptionPane.showMessageDialog(null, "Вы проиграли!");
                 System.exit(1);
             }
         }
     }
-
     private void testWin() {
         if (p.s > 200000) {
             JOptionPane.showMessageDialog(null, "Ну ты и задроот))");

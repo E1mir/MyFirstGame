@@ -1,4 +1,4 @@
-package gameLogic;
+package Rally;
 
 import javax.swing.*;
 
@@ -10,5 +10,4 @@ public class Main {
         f.add(new Road());
         f.setVisible(true);
     }
-
 }
