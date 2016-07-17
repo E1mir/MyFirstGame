@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Enemy {
 
-    // FIELDS
+    // переменные
     private double x;
     private double y;
     private int r;
@@ -28,15 +28,15 @@ public class Enemy {
 
     private boolean slow;
 
-    // CONSTRUCTOR
+    // конструктор
     public Enemy(int type, int rank) {
 
         this.type = type;
         this.rank = rank;
 
-        // default enemy
+        // Типы врагов
         if (type == 1) {
-            //color1 = Color.BLUE;
+            //враг 1 уровня;
             color1 = new Color(0, 0, 255, 128);
             if (rank == 1) {
                 speed = 2;
@@ -59,7 +59,7 @@ public class Enemy {
                 health = 4;
             }
         }
-        // stronger, faster default
+        // 2-тип врага
         if (type == 2) {
             //color1 = Color.RED;
             color1 = new Color(255, 0, 0, 128);
@@ -84,7 +84,7 @@ public class Enemy {
                 health = 4;
             }
         }
-        // slow, but hard to kill
+        // 3 тип врага
         if (type == 3) {
             //color1 = Color.GREEN;
             color1 = new Color(0, 255, 0, 128);
@@ -127,7 +127,7 @@ public class Enemy {
 
     }
 
-    // FUNCTIONS
+    // функции
     public double getx() {
         return x;
     }
@@ -234,6 +234,7 @@ public class Enemy {
 
     }
 
+    //рисование врагов
     public void draw(Graphics2D g) {
 
         if (hit) {
@@ -255,31 +256,6 @@ public class Enemy {
         }
 
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

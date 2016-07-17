@@ -124,10 +124,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         g.fillRect(0, 0, WIDTH, HEIGHT);
         g.setColor(Color.WHITE);
         g.setFont(new Font("Century Gothic", Font.PLAIN, 16));
-        String s = "G A M E   O V E R";
+        String s = "И Г Р А   О К О Н Ч Е Н А";
         int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
         g.drawString(s, (WIDTH - length) / 2, HEIGHT / 2);
-        s = "Final Score: " + player.getScore();
+        s = "Ваш результат: " + player.getScore();
         length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
         g.drawString(s, (WIDTH - length) / 2, HEIGHT / 2 + 30);
         gameDraw();
@@ -302,22 +302,22 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 
                 if (type == 1) {
                     player.gainLife();
-                    texts.add(new Text(player.getx(), player.gety(), 2000, "Extra Life"));
+                    texts.add(new Text(player.getx(), player.gety(), 2000, "Дополнительная жизнь"));
                 }
                 if (type == 2) {
                     player.increasePower(1);
-                    texts.add(new Text(player.getx(), player.gety(), 2000, "Power"));
+                    texts.add(new Text(player.getx(), player.gety(), 2000, "Сила"));
                 }
                 if (type == 3) {
                     player.increasePower(2);
-                    texts.add(new Text(player.getx(), player.gety(), 2000, "Double Power"));
+                    texts.add(new Text(player.getx(), player.gety(), 2000, "Двойная сила"));
                 }
                 if (type == 4) {
                     slowDownTimer = System.nanoTime();
                     for (int j = 0; j < enemies.size(); j++) {
                         enemies.get(j).setSlow(true);
                     }
-                    texts.add(new Text(player.getx(), player.gety(), 2000, "Slow Down"));
+                    texts.add(new Text(player.getx(), player.gety(), 2000, "Замедление"));
                 }
 
                 powerups.remove(i);
@@ -383,7 +383,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         // draw wave number
         if (waveStartTimer != 0) {
             g.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-            String s = "- W A V E   " + waveNumber + "   -";
+            String s = "- В о л н а   " + waveNumber + "   -";
             int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
             int alpha = (int) (255 * Math.sin(3.14 * waveStartTimerDiff / waveDelay));
             if (alpha > 255) alpha = 255;
@@ -414,7 +414,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         // draw player score
         g.setColor(Color.WHITE);
         g.setFont(new Font("Century Gothic", Font.PLAIN, 14));
-        g.drawString("Score: " + player.getScore(), WIDTH - 100, 30);
+        g.drawString("Очки: " + player.getScore(), WIDTH - 100, 30);
 
         // draw slowdown meter
         if (slowDownTimer != 0) {

@@ -3,7 +3,7 @@ package Dots;
 
 import javax.swing.JFrame;
 import java.awt.*;
-
+//Главная запускаемая часть игры!
 public class Game {
 
     public static void main(String[] args) {

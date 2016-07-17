@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Text {
 
-    // FIELDS
+    // переменные
     private double x;
     private double y;
     private long time;
@@ -12,7 +12,7 @@ public class Text {
 
     private long start;
 
-    // CONSTRUCTOR
+    // конструктор
     public Text(double x, double y, long time, String s) {
         this.x = x;
         this.y = y;
@@ -20,7 +20,7 @@ public class Text {
         this.s = s;
         start = System.nanoTime();
     }
-
+    //делаем плавное появление и исчезновение
     public boolean update() {
         long elapsed = (System.nanoTime() - start) / 1000000;
         if (elapsed > time) {
@@ -28,7 +28,7 @@ public class Text {
         }
         return false;
     }
-
+    //обрисовка текста
     public void draw(Graphics2D g) {
 
         g.setFont(new Font("Century Gothic", Font.PLAIN, 12));

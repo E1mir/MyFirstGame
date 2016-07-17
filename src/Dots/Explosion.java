@@ -4,13 +4,13 @@ import java.awt.*;
 
 public class Explosion {
 
-    // FIELDS
+    // переменные
     private double x;
     private double y;
     private int r;
     private int maxRadius;
 
-    // CONSTRUCTOR
+    // конструктор
     public Explosion(double x, double y, int r, int max) {
         this.x = x;
         this.y = y;
@@ -25,7 +25,7 @@ public class Explosion {
         }
         return false;
     }
-
+    //рисунок взрыва
     public void draw(Graphics2D g) {
         g.setColor(new Color(255, 255, 255, 128));
         g.setStroke(new BasicStroke(3));

@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Player {
 
-    // FIELDS
+    // переменные
     private int x;
     private int y;
     private int r;
@@ -37,7 +37,7 @@ public class Player {
             1, 2, 3, 4, 5
     };
 
-    // CONSTRUCTOR
+    // конструктор
     public Player() {
 
         x = GamePanel.WIDTH / 2;
@@ -63,7 +63,7 @@ public class Player {
 
     }
 
-    // FUNCTIONS
+    // функции
 
     public int getx() {
         return x;
@@ -153,6 +153,7 @@ public class Player {
         return requiredPower[powerLevel];
     }
 
+    //обновление при рисовании
     public void update() {
 
         if (left) {
@@ -179,14 +180,14 @@ public class Player {
         dx = 0;
         dy = 0;
 
-        // firing
+        // перестрелка
         if (firing) {
             long elapsed = (System.nanoTime() - firingTimer) / 1000000;
 
             if (elapsed > firingDelay) {
 
                 firingTimer = System.nanoTime();
-
+                //добавление силы перестрелки
                 if (powerLevel < 2) {
                     GamePanel.bullets.add(new Bullet(270, x, y));
                 } else if (powerLevel < 4) {
@@ -210,13 +211,11 @@ public class Player {
         }
 
     }
-
+    //обрисовка игрока
     public void draw(Graphics2D g) {
-
         if (recovering) {
             g.setColor(color2);
             g.fillOval(x - r, y - r, 2 * r, 2 * r);
-
             g.setStroke(new BasicStroke(3));
             g.setColor(color2.darker());
             g.drawOval(x - r, y - r, 2 * r, 2 * r);
@@ -224,13 +223,11 @@ public class Player {
         } else {
             g.setColor(color1);
             g.fillOval(x - r, y - r, 2 * r, 2 * r);
-
             g.setStroke(new BasicStroke(3));
             g.setColor(color1.darker());
             g.drawOval(x - r, y - r, 2 * r, 2 * r);
             g.setStroke(new BasicStroke(1));
         }
-
     }
 
 }

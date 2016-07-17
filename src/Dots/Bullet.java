@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Bullet {
 
-    // FIELDS
+    //переменные
     private double x;
     private double y;
     private int r;
@@ -16,7 +16,7 @@ public class Bullet {
 
     private Color color1;
 
-    // CONSTRUCTOR
+    // конструктор
     public Bullet(double angle, int x, int y) {
 
         this.x = x;
@@ -32,7 +32,7 @@ public class Bullet {
 
     }
 
-    // FUNCTIONS
+    // функции
 
     public double getx() {
         return x;
@@ -51,6 +51,7 @@ public class Bullet {
         x += dx;
         y += dy;
 
+
         if (x < -r || x > GamePanel.WIDTH + r ||
                 y < -r || y > GamePanel.HEIGHT + r) {
             return true;
@@ -60,6 +61,7 @@ public class Bullet {
 
     }
 
+
     public void draw(Graphics2D g) {
 
         g.setColor(color1);
@@ -68,46 +70,3 @@ public class Bullet {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
