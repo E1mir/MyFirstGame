@@ -3,7 +3,6 @@ package Dots;
 import java.awt.*;
 
 public class Text {
-
     // переменные
     private double x;
     private double y;
@@ -20,6 +19,7 @@ public class Text {
         this.s = s;
         start = System.nanoTime();
     }
+
     //делаем плавное появление и исчезновение
     public boolean update() {
         long elapsed = (System.nanoTime() - start) / 1000000;
@@ -28,6 +28,7 @@ public class Text {
         }
         return false;
     }
+
     //обрисовка текста
     public void draw(Graphics2D g) {
 
@@ -42,22 +43,3 @@ public class Text {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
