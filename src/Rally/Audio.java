@@ -10,9 +10,7 @@ public class Audio implements Runnable{
         try {
             Player audio = new Player(new FileInputStream("res/TheFatRat - Time Lapse.mp3"));
             audio.play();
-        } catch (JavaLayerException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        } catch (JavaLayerException | FileNotFoundException e) {
             e.printStackTrace();
         }
     }
